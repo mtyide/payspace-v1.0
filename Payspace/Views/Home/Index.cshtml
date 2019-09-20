@@ -1,0 +1,35 @@
+﻿<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome to Payspace Tax Calculator</h1>
+                <h2>This is an assessment required by Payspace in order to be employed.</h2>
+            </hgroup>
+            <p>
+                Calculator Input: Postal Code &amp; Income
+            </p>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <h3>Complete the form below and submit:</h3>
+        <hr />
+        <form action="/" method="post" name="calculator" id="calculator">
+            <table>
+                <tr>
+                    <td>Postal Code: </td>
+                    <td><input type="text" name="calculator:code" id="code" maxlength="4" required placeholder="Postal Code" alt="Postal Code" autofocus /></td>
+                </tr>
+                <tr>
+                    <td>Income: </td>
+                    <td><input type="number" name="calculator:income" id="income" required placeholder="Income" alt="Income" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="calculate" name="calculate" type="button">Calculate Tax</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span id="result"></span></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</div>

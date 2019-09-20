@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PayspaceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CodeTaxType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProgressiveRateLookup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate" Type="Int32" />
+    <Property Name="From" Type="Int32" />
+    <Property Name="To" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TaxCalculationResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Result" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Income" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="PayspaceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CodeTaxTypes" EntityType="Self.CodeTaxType" />
+    <EntitySet Name="ProgressiveRateLookups" EntityType="Self.ProgressiveRateLookup" />
+    <EntitySet Name="TaxCalculationResults" EntityType="Self.TaxCalculationResult" />
+    <FunctionImport Name="CreateTaxCalculationResult" ReturnType="Collection(Int32)">
+      <Parameter Name="result" Mode="In" Type="Int32" />
+      <Parameter Name="code" Mode="In" Type="String" />
+      <Parameter Name="income" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCodeTaxType" ReturnType="Collection(String)">
+      <Parameter Name="code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetProgressiveRate" ReturnType="Collection(Int32)">
+      <Parameter Name="income" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
