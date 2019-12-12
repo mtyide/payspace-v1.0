@@ -1,4 +1,8 @@
-# payspace
- Payspace Assessment
- --------------------------------------------------------------------------------------------------
- Bootstrap 4. Entity Framework 5.0 (Code first). jQuery. HTML5. Web API. Build and run the project or see configuration file. This project calculates Tax Rate for a particular region. Developer: Yandisa Mtyide (Level: Intermediate)
+# PhonebookApplication
+ Phonebook Application assessment (Technical) for interview purposes
+-------------------------------------------
+# Bootstrap
+Entity Framework 6.0 (Code First). NET Core (MVC Razor). jQuery. HTML5. Web API
+-------------------------------------------
+# Build and run project.
+This application simply manages your phonebook contacts. Developer: Yandisa Mtyide (Level: Intermediate). Google Drive: https://drive.google.com/drive/folders/1ZH6y25z4JA93dwFPayZ9ngrx23yqdkQ5
